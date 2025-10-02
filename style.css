@@ -140,3 +140,71 @@ nav a:hover {
 .ficha-texto ul li {
   margin-bottom: 5px;
 }
+
+
+/* === POPUP ESTILIZADO === */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none; /* começa escondido */
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* fica acima de tudo */
+}
+
+.popup {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  animation: aparecer 0.3s ease;
+}
+
+.popup h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.popup button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.popup .btn-yes {
+  background: #28a745;
+  color: #fff;
+}
+
+.popup .btn-no {
+  background: #dc3545;
+  color: #fff;
+}
+
+.popup button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Animação de entrada */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

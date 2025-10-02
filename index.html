@@ -6,6 +6,27 @@
   <title>Chooser</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+  function abrirPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function fecharPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  function baixarPDF() {
+    fecharPopup();
+    let link = document.createElement("a");
+    link.href = "All/Sistema/Sistema.pdf"; // coloque o caminho do PDF
+    link.download = "Sistema de All In One"; // nome que vai baixar
+    link.click();
+  }
+</script>
+
+
+
 <body>
   <div class="container">
     <h1>Escolha o RPG</h1>
@@ -18,11 +39,21 @@
         <img src="img/Capas/Caparup.png" alt="Ruptura Escarlate">
         <h2>Ruptura Escarlate</h2>
       </a>
-      <a href=".html" class="card">
-        <img src="img/Bloqueio/Bloquei.png" alt="Ruptura Escarlate">
-        <h2>Sistema De All In One</h2>
-      </a>
+      <div class="card" onclick="abrirPopup()">
+  <img src="img/Bloqueio/Bloquei.png" alt="Sistema De All In One">
+  <h2>Sistema De All In One</h2>
+</div>
     </div>
   </div>
+
+  <!-- POPUP -->
+<div class="popup-overlay" id="popup">
+  <div class="popup">
+    <h2>Deseja baixar o arquivo PDF?</h2>
+    <button class="btn-yes" onclick="baixarPDF()">Sim</button>
+    <button class="btn-no" onclick="fecharPopup()">Não</button>
+  </div>
+</div>
+
 </body>
 </html>
